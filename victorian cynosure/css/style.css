@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #4891ff;
+    --light-color: #f4f4f6;
+    --dark-color: #111;
+}
+
+body {
+    font-family: 'Potta+One', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: white;
+}
+/* Base styles */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.bg-image{
+    background-image: url(../images/backpic.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    bo
+}
+/* Navbar */
+.navbar {
+    background-color: rgb(225, 225, 64);
+    padding: 1rem;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar .logo img {
+    width: 80px;
+    height: auto;
+}
+
+.navbar .main-menu ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.15rem;
+}
+
+.navbar ul li a {
+    padding: 0.4rem 0.5rem;
+    display: block;
+    /* 加深字體粗細 */
+    font-weight: 800;
+    transition: 0.5s;
+}
+.navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Dropdown */
+.main-menu .li a{
+    margin-bottom: 5px;
+    padding: 100px;
+}
+.dropbtn {
+    border: none;
+    /* border-top: 3px solid ; */
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background-color: rgb(225, 225, 64);
+    color: #000;
+    /* 加深字體粗細 */
+    font-weight: 800;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    font-weight: 600;
+    position: absolute;
+    background-color: rgb(225, 225, 64);
+    margin-top: 1px;
+    font-size: large;
+    padding: 7.5px 0.5px;
+    min-width: 140px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+.dropbtn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; /* 先设置到左边的 50% */
+    transform: translateX(-50%); /* 使用 transform 将元素居中 */
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+    display: inline-block;
+    border-top: 1px solid black;
+    transition: 0.3s;
+}
+.dropdown-content a {
+    color: black;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    display: block;
+}
+
+.dropdown-content a::before{
+    content: '';
+    left: 50%; /* 先设置到左边的 50% */
+    transform: translateX(-50%); /* 使用 transform 将元素居中 */
+    position: absolute;
+    top: -1px;
+    width: 65%;
+    display: block;
+    margin-bottom: 200px;
+    border-top: 3px solid ;
+}
+.dropdown-content a:hover{
+    background-color: rgb(225, 225, 64);
+    border: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover {
+    .dropbtn {color: var(--primary-color);}
+}
+.dropdown:hover .dropbtn::before {
+    border-top-width: 5px;
+    border-color: var(--primary-color);
+}
+.dropdown-content a:hover::before {
+    border-top-width: 5px;
+    color: var(--primary-color);
+}
